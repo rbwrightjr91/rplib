@@ -1,5 +1,6 @@
 package rplib.Races;
 
+import rplib.General.Abilities;
 import rplib.General.Size;
 
 import org.junit.Before;
@@ -33,7 +34,8 @@ public class ElfTest {
 
     @Test
     public void abilityScore() {
-        String expected = "Dexterity";
+        String[] abilities = {Abilities.INT.val(), Abilities.CHA.val()};
+        List<String> expected = new ArrayList<String>(Arrays.asList(abilities));
 
         assertEquals(e.abilityScore(), expected);
 

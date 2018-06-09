@@ -4,7 +4,9 @@ import rplib.General.Abilities;
 import rplib.General.Size;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 /**
  * Elf class
@@ -53,7 +55,7 @@ public class Elf implements Race {
      * Specifies the boosted ability score of the Elf race
      *
      */
-    private static final String ABILITY_SCORE_BOOST = Abilities.DEX.val();
+    private static final List<String> ABILITY_SCORE_BOOST = new ArrayList<String>(Arrays.asList(Abilities.INT.val(), Abilities.CHA.val()));
 
     /**
      * Specifies size of the Elf race
@@ -126,7 +128,7 @@ public class Elf implements Race {
      * @return String
      */
     @Override
-    public String abilityScore() {
+    public Collection<String> abilityScore() {
 
         return ABILITY_SCORE_BOOST;
 

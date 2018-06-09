@@ -8,6 +8,6 @@ public interface Race {
 
     Collection<String> knownLanguages();
 
-    String abilityScore();
+    Collection<String> abilityScore();
 
 }
