@@ -11,63 +11,63 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class DwarfTest {
+public class ElfTest {
 
-    Dwarf d;
+    Elf e;
 
     @Before
     public void setUp() {
 
-        d = new Dwarf();
+        e = new Elf();
 
     }
 
     @Test
     public void racialTraits() {
-        String[] traits = {"Darkvision", "Poison Resist",
-                            "Stonecunning", "Dwarven Weapon Training"};
+        String[] traits = {"Darkvision", "Keen Senses",
+                "Fey Ancestry", "Trance"};
         List<String> expected = new ArrayList<>(Arrays.asList(traits));
 
-        assertEquals(d.racialTraits(), expected);
+        assertEquals(e.racialTraits(), expected);
     }
 
     @Test
     public void abilityScore() {
-        String expected = "Constitution";
+        String expected = "Dexterity";
 
-        assertEquals(d.abilityScore(), expected);
+        assertEquals(e.abilityScore(), expected);
 
     }
 
     @Test
     public void knownLanguages() {
-        String[] langs = {"Common", "Dwarvish"};
+        String[] langs = {"Common", "Elvish"};
         List<String> expected = new ArrayList<>(Arrays.asList(langs));
 
-        assertEquals(d.knownLanguages(), expected);
+        assertEquals(e.knownLanguages(), expected);
     }
 
     @Test
     public void minAge() {
-        assertEquals(50, Dwarf.minAge());
+        assertEquals(100, Elf.minAge());
     }
 
     @Test
     public void maxAge() {
-        assertEquals(350, Dwarf.maxAge());
+        assertEquals(750, Elf.maxAge());
     }
 
     @Test
     public void size() {
 
-        assertEquals(Size.MEDIUM.val(), Dwarf.size());
+        assertEquals(Size.MEDIUM.val(), Elf.size());
 
     }
 
     @Test
     public void baseSpeed() {
 
-        assertEquals(25, Dwarf.baseSpeed());
+        assertEquals(30, Elf.baseSpeed());
 
     }
 
