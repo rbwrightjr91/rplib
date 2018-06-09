@@ -31,7 +31,7 @@ public class DiceRoller {
     private Random rnd;
 
     public DiceRoller() {
-        this.rnd = new Random((long) Math.random());
+        this.rnd = new Random((long) (Math.random() * Math.pow(10, 6)));
     }
 
     /**
