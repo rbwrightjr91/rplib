@@ -35,10 +35,9 @@ public class DiceRoller {
     }
 
     /**
-     *
      * Roll a two-sided die
      *
-     * @return the result of rolling a two-sided die
+     * @return      the result of rolling a two-sided die
      */
     public int d2() {
 
@@ -50,8 +49,8 @@ public class DiceRoller {
      *
      * Roll n two-sided dice
      *
-     * @param n
-     * @return the result of rolling n two-sided dice
+     * @param n     the number of dice to roll
+     * @return      the result of rolling n two-sided dice
      */
     public int d2(int n) {
 
@@ -63,7 +62,7 @@ public class DiceRoller {
      *
      * Roll a four-sided die
      *
-     * @return the result of rolling a four-sided die
+     * @return      the result of rolling a four-sided die
      */
     public int d4() {
 
@@ -75,8 +74,8 @@ public class DiceRoller {
      *
      * Roll n four-sided dice
      *
-     * @param n
-     * @return the result of rolling n four-sided dice
+     * @param n     the number of dice to roll
+     * @return      the result of rolling n four-sided dice
      */
     public int d4(int n) {
 
@@ -88,7 +87,7 @@ public class DiceRoller {
      *
      * Roll a six-sided die
      *
-     * @return the result of rolling a six-sided die
+     * @return      the result of rolling a six-sided die
      */
     public int d6() {
 
@@ -100,8 +99,8 @@ public class DiceRoller {
      *
      * Roll n six-sided dice
      *
-     * @param n
-     * @return the result of rolling n six-sided dice
+     * @param n     the number of dice to roll
+     * @return      the result of rolling n six-sided dice
      */
     public int d6(int n) {
 
@@ -113,7 +112,7 @@ public class DiceRoller {
      *
      * Roll an eight-sided die
      *
-     * @return the result of rolling a eight-sided die
+     * @return      the result of rolling a eight-sided die
      */
     public int d8() {
 
@@ -125,8 +124,8 @@ public class DiceRoller {
      *
      * Roll n eight-sided dice
      *
-     * @param n
-     * @return the result of rolling n eight-sided dice
+     * @param n     the number of dice to roll
+     * @return      the result of rolling n eight-sided dice
      */
     public int d8(int n) {
 
@@ -138,7 +137,7 @@ public class DiceRoller {
      *
      * Roll a ten-sided die
      *
-     * @return the result of rolling a ten-sided die
+     * @return      the result of rolling a ten-sided die
      */
     public int d10() {
 
@@ -150,8 +149,8 @@ public class DiceRoller {
      *
      * Roll n ten-sided dice
      *
-     * @param n
-     * @return the result of rolling n ten-sided dice
+     * @param n     the number of dice to roll
+     * @return      the result of rolling n ten-sided dice
      */
     public int d10(int n) {
 
@@ -163,7 +162,7 @@ public class DiceRoller {
      *
      * Roll a twelve-sided die
      *
-     * @return the result of rolling a twelve-sided die
+     * @return      the result of rolling a twelve-sided die
      */
     public int d12() {
 
@@ -175,8 +174,8 @@ public class DiceRoller {
      *
      * Roll n twelve-sided dice
      *
-     * @param n
-     * @return the result of rolling n twelve-sided dice
+     * @param n     the number of dice to roll
+     * @return      the result of rolling n twelve-sided dice
      */
     public int d12(int n) {
 
@@ -188,7 +187,7 @@ public class DiceRoller {
      *
      * Roll a twenty-sided die
      *
-     * @return the result of rolling a twenty-sided die
+     * @return      the result of rolling a twenty-sided die
      */
     public int d20() {
 
@@ -200,8 +199,8 @@ public class DiceRoller {
      *
      * Roll n twenty-sided dice
      *
-     * @param n
-     * @return the result of rolling n twenty-sided dice
+     * @param n     the number of dice to roll
+     * @return      the result of rolling n twenty-sided dice
      */
     public int d20(int n) {
 
@@ -213,7 +212,7 @@ public class DiceRoller {
      *
      * Roll a hundred-sided die
      *
-     * @return the result of rolling a hundred-sided die
+     * @return      the result of rolling a hundred-sided die
      */
     public int d100() {
 
@@ -225,8 +224,8 @@ public class DiceRoller {
      *
      * Roll n hundred-sided dice
      *
-     * @param n
-     * @return the result of rolling n hundred-sided dice
+     * @param n     the number of dice to roll
+     * @return      the result of rolling n hundred-sided dice
      */
     public int d100(int n) {
 
@@ -237,8 +236,8 @@ public class DiceRoller {
     /**
      * Roll an s-sided die
      *
-     * @param s
-     * @return the result of rolling an s-sided die
+     * @param s     the number of sides on the die
+     * @return      the result of rolling an s-sided die
      */
     public int customDie(int s) {
 
@@ -249,9 +248,9 @@ public class DiceRoller {
     /**
      * roll n s-sided dice
      *
-     * @param s
-     * @param n
-     * @return the result of rolling n s-sided dice
+     * @param s     the number of sides on the dice
+     * @param n     the number of s-sided dice to roll
+     * @return      the result of rolling n s-sided dice
      */
     public int customDie(int s, int n) {
         return this.between(n, n * s);
@@ -260,8 +259,8 @@ public class DiceRoller {
     /**
      * Helper function to generate numbers between 1 and max inclusive
      *
-     * @param max
-     * @return an integer between 1 and max
+     * @param max   the maximum desired value
+     * @return      an integer value between 1 and max
      */
     private int between(int max) {
         return this.between(1, max);
@@ -271,9 +270,9 @@ public class DiceRoller {
      *
      * Helper function to generate numbers between min and max inclusive
      *
-     * @param min
-     * @param max
-     * @return an integer between min and max
+     * @param min       the minimum desired value
+     * @param max       the maximum desired value
+     * @return          an integer value between min and max
      */
     private int between(int min, int max) {
         return this.rnd.nextInt(max - min + 1) + min;
