@@ -41,7 +41,7 @@ public class DiceRoller {
      */
     public int d2() {
 
-        return this.oneDice(Sides.TWO.numSides());
+        return this.oneDie(Sides.TWO.numSides());
 
     }
 
@@ -66,7 +66,7 @@ public class DiceRoller {
      */
     public int d4() {
 
-        return this.oneDice(Sides.FOUR.numSides());
+        return this.oneDie(Sides.FOUR.numSides());
 
     }
 
@@ -91,7 +91,7 @@ public class DiceRoller {
      */
     public int d6() {
 
-        return this.oneDice(Sides.SIX.numSides());
+        return this.oneDie(Sides.SIX.numSides());
 
     }
 
@@ -116,7 +116,7 @@ public class DiceRoller {
      */
     public int d8() {
 
-        return this.oneDice(Sides.EIGHT.numSides());
+        return this.oneDie(Sides.EIGHT.numSides());
 
     }
 
@@ -141,7 +141,7 @@ public class DiceRoller {
      */
     public int d10() {
 
-        return this.oneDice(Sides.TEN.numSides());
+        return this.oneDie(Sides.TEN.numSides());
 
     }
 
@@ -166,7 +166,7 @@ public class DiceRoller {
      */
     public int d12() {
 
-        return this.oneDice(Sides.TWELVE.numSides());
+        return this.oneDie(Sides.TWELVE.numSides());
 
     }
 
@@ -191,7 +191,7 @@ public class DiceRoller {
      */
     public int d20() {
 
-        return this.oneDice(Sides.TWENTY.numSides());
+        return this.oneDie(Sides.TWENTY.numSides());
 
     }
 
@@ -216,7 +216,7 @@ public class DiceRoller {
      */
     public int d100() {
 
-        return this.oneDice(Sides.HUNDRED.numSides());
+        return this.oneDie(Sides.HUNDRED.numSides());
 
     }
 
@@ -241,7 +241,7 @@ public class DiceRoller {
      */
     public int customDie(int s) {
 
-        return this.oneDice(s);
+        return this.oneDie(s);
     }
 
     /**
@@ -261,7 +261,7 @@ public class DiceRoller {
      * @param s     the number of sides
      * @return      the result of the roll
      */
-    private int oneDice(int s) {
+    private int oneDie(int s) {
         return this.multipleDice(1, s);
     }
 
