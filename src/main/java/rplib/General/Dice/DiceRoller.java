@@ -252,7 +252,7 @@ public class DiceRoller {
      * @return      the result of rolling n s-sided dice
      */
     public int customDie(int n, int s) {
-        return this.multipleDice(s, n);
+        return this.multipleDice(n, s);
     }
 
     /**

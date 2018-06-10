@@ -267,7 +267,7 @@ public class DiceRollerTest {
     public void customDie1() {
 
         for(int i = 0; i < NUM_ROLLS; i++){
-            rolls.add(roller.customDie(NUM_SIDES, NUM_DICE));
+            rolls.add(roller.customDie(NUM_DICE, NUM_SIDES));
         }
 
         for(Integer r : rolls) {
