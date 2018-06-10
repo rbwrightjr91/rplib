@@ -41,7 +41,7 @@ public class DiceRoller {
      */
     public int d2() {
 
-        return this.between(Sides.TWO.numSides());
+        return this.oneDice(Sides.TWO.numSides());
 
     }
 
@@ -54,7 +54,7 @@ public class DiceRoller {
      */
     public int d2(int n) {
 
-        return this.between(n, n * Sides.TWO.numSides());
+        return this.multipleDice(n, Sides.TWO.numSides());
 
     }
 
@@ -66,7 +66,7 @@ public class DiceRoller {
      */
     public int d4() {
 
-        return this.between(Sides.FOUR.numSides());
+        return this.oneDice(Sides.FOUR.numSides());
 
     }
 
@@ -79,7 +79,7 @@ public class DiceRoller {
      */
     public int d4(int n) {
 
-        return this.between(n, n * Sides.FOUR.numSides());
+        return this.multipleDice(n, Sides.FOUR.numSides());
 
     }
 
@@ -91,7 +91,7 @@ public class DiceRoller {
      */
     public int d6() {
 
-        return this.between(Sides.SIX.numSides());
+        return this.oneDice(Sides.SIX.numSides());
 
     }
 
@@ -104,7 +104,7 @@ public class DiceRoller {
      */
     public int d6(int n) {
 
-        return this.between(n, n * Sides.SIX.numSides());
+        return this.multipleDice(n, Sides.SIX.numSides());
 
     }
 
@@ -116,7 +116,7 @@ public class DiceRoller {
      */
     public int d8() {
 
-        return this.between(Sides.EIGHT.numSides());
+        return this.oneDice(Sides.EIGHT.numSides());
 
     }
 
@@ -129,7 +129,7 @@ public class DiceRoller {
      */
     public int d8(int n) {
 
-        return this.between(n, n * Sides.EIGHT.numSides());
+        return this.multipleDice(n, Sides.EIGHT.numSides());
 
     }
 
@@ -141,7 +141,7 @@ public class DiceRoller {
      */
     public int d10() {
 
-        return this.between(Sides.TEN.numSides());
+        return this.oneDice(Sides.TEN.numSides());
 
     }
 
@@ -154,7 +154,7 @@ public class DiceRoller {
      */
     public int d10(int n) {
 
-        return this.between(n, n * Sides.TEN.numSides());
+        return this.multipleDice(n, Sides.TEN.numSides());
 
     }
 
@@ -166,7 +166,7 @@ public class DiceRoller {
      */
     public int d12() {
 
-        return this.between(Sides.TWELVE.numSides());
+        return this.oneDice(Sides.TWELVE.numSides());
 
     }
 
@@ -179,7 +179,7 @@ public class DiceRoller {
      */
     public int d12(int n) {
 
-        return this.between(n, n * Sides.TWELVE.numSides());
+        return this.multipleDice(n, Sides.TWELVE.numSides());
 
     }
 
@@ -191,7 +191,7 @@ public class DiceRoller {
      */
     public int d20() {
 
-        return this.between(Sides.TWENTY.numSides());
+        return this.oneDice(Sides.TWENTY.numSides());
 
     }
 
@@ -204,7 +204,7 @@ public class DiceRoller {
      */
     public int d20(int n) {
 
-        return this.between(n, n * Sides.TWENTY.numSides());
+        return this.multipleDice(n, Sides.TWENTY.numSides());
 
     }
 
@@ -216,7 +216,7 @@ public class DiceRoller {
      */
     public int d100() {
 
-        return this.between(Sides.HUNDRED.numSides());
+        return this.oneDice(Sides.HUNDRED.numSides());
 
     }
 
@@ -229,7 +229,7 @@ public class DiceRoller {
      */
     public int d100(int n) {
 
-        return this.between(n, n * Sides.HUNDRED.numSides());
+        return this.multipleDice(n, Sides.HUNDRED.numSides());
 
     }
 
@@ -241,41 +241,47 @@ public class DiceRoller {
      */
     public int customDie(int s) {
 
-        return this.between(s);
-
+        return this.oneDice(s);
     }
 
     /**
      * roll n s-sided dice
      *
-     * @param s     the number of sides on the dice
      * @param n     the number of s-sided dice to roll
+     * @param s     the number of sides on the dice
      * @return      the result of rolling n s-sided dice
      */
-    public int customDie(int s, int n) {
-        return this.between(n, n * s);
+    public int customDie(int n, int s) {
+        return this.multipleDice(s, n);
     }
 
     /**
-     * Helper function to generate numbers between 1 and max inclusive
+     * Helper function to generate numbers Dice 1 and max inclusive
      *
-     * @param max   the maximum desired value
-     * @return      an integer value between 1 and max
+     * @param s     the number of sides
+     * @return      the result of the roll
      */
-    private int between(int max) {
-        return this.between(1, max);
+    private int oneDice(int s) {
+        return this.multipleDice(1, s);
     }
 
     /**
      *
-     * Helper function to generate numbers between min and max inclusive
+     * Helper function to generate numbers Dice min and max inclusive
      *
-     * @param min       the minimum desired value
-     * @param max       the maximum desired value
-     * @return          an integer value between min and max
+     * @param n         the number of dice
+     * @param s         the number of sides
+     * @return          the total result of the rolls
      */
-    private int between(int min, int max) {
-        return this.rnd.nextInt(max - min + 1) + min;
+    private int multipleDice(int n, int s) {
+
+        int total = 0;
+
+        for(int i = 0; i < n; i++){
+            total += this.rnd.nextInt(s) + 1;
+        }
+
+        return total;
     }
 
 }
